@@ -5,20 +5,14 @@
   rm(list = ls()) # Clean variable
   memory.limit(150000)
 
-
 ##### Load Packages #####
-  if(!require("Seurat")) install.packages("Seurat")
-  if(!require("tidyverse")) install.packages("tidyverse")
-  if(!require("ggpubr")) install.packages("ggpubr")
-
-  library(ggpubr)
-  library(tidyverse)
-  library(Seurat)
+  if(!require("Seurat")) install.packages("Seurat"); library(Seurat)
+  if(!require("tidyverse")) install.packages("tidyverse"); library(tidyverse)
+  if(!require("ggpubr")) install.packages("ggpubr"); library(ggpubr)
 
   #### BiocManager installation ####
   ## Check whether the installation of those packages is required from BiocManager
-  if (!require("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
+  if (!require("BiocManager", quietly = TRUE)) install.packages("BiocManager")
   Package.set <- c("SingleR","scRNAseq","celldex","scran","scater","scuttle")
   for (i in 1:length(Package.set)) {
     if (!requireNamespace(Package.set[i], quietly = TRUE)){
